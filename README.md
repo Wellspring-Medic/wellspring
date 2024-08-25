@@ -16,3 +16,6 @@ If you're getting started and need assistance or face any bugs, join our active 
 <a href="https://link1.com" style="display: inline-block; padding: 10px 20px; background-color: #0366d6; color: #ffffff; text-decoration: none; border-radius: 5px;">Button 1</a>
 
 <a href="https://link2.com" style="display: inline-block; padding: 10px 20px; background-color: #28a745; color: #ffffff; text-decoration: none; border-radius: 5px;">Button 2</a>
+
+[![Button 1](https://img.shields.io/badge/Button%201-0366d6?style=for-the-badge)](https://link1.com)
+[![Button 2](https://img.shields.io/badge/Button%202-28a745?style=for-the-badge)](https://link2.com)

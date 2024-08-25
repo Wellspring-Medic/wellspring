@@ -78,13 +78,13 @@ npm (Node Package Manager)
 #### Cloning the Repository
  
  ```git clone https://github.com/adrianhajdin/healthcare.git
-    cd healthcare 
+    cd healthcare```
 
 #### Installation
 
 Install the project dependencies using npm:
 
-``` npm install
+```npm install```
 
 #### Set Up Environment Variables
 
@@ -99,13 +99,13 @@ PATIENT_COLLECTION_ID=
 APPOINTMENT_COLLECTION_ID=
 NEXT_PUBLIC_BUCKET_ID=
 
-NEXT_PUBLIC_ADMIN_PASSKEY=111111
+NEXT_PUBLIC_ADMIN_PASSKEY=111111```
 
 Replace the placeholder values with your actual Appwrite credentials. You can obtain these credentials by signing up on the Appwrite website.
 
 #### Running the Project
 
-``` npm run dev
+``` npm run dev```
 
 Open http://localhost:3000 in your browser to view the project.
 

@@ -130,4 +130,4 @@ Open http://localhost:3000 in your browser to view the project.
 
 This project is licensed under the [MIT License](LICENSE).
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License--MIT-yellow.svg)](https://opensource.org/licenses/MIT)

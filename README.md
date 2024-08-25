@@ -3,9 +3,7 @@
 - ⚙️ Tech Stack
 - 🔋 Features
 - 🤸 Quick Start
-- 🕸️ Snippets (Code to Copy)
-- 🔗 Assets
-- 🚀 More
+- 🕸️ License
 
 
 
@@ -126,4 +124,10 @@ npm run dev
 ```
 
 Open http://localhost:3000 in your browser to view the project.
-```
+
+
+# LICENSE 
+
+This project is licensed under the [MIT License](LICENSE).
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

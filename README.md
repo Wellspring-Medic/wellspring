@@ -8,6 +8,7 @@
 - 🚀 More
 
 
+
 # 🤖 INTRODUCTION
 A healthcare Suite, made for 
 
@@ -41,6 +42,7 @@ A healthcare Suite, made for
 - Twilio
 
 
+
 # 🔋FEATURES
 👉 Patient Registration: Users can sign up and create a personal profile as a patient.
 
@@ -65,6 +67,7 @@ and many more, including code architecture and reusability.
 I see the issue. The problem is that you've nested code blocks within a larger code block, which is causing the formatting to break. Let's fix this by properly structuring the markdown. Here's the corrected version:
 
 
+
 # 🤸 QUICK START
 
 Follow these steps to set up the project locally on your machine.
@@ -79,9 +82,14 @@ Make sure you have the following installed on your machine:
 
 ### Cloning the Repository
 
-```bash
-git clone https://github.com/adrianhajdin/healthcare.git
-cd healthcare
+```bash - using SSH
+git clone git@github.com:Wellspring-Medic/wellspring.git
+cd wellspring
+```
+
+```bash - using HTTPS
+git clone https://github.com/Wellspring-Medic/wellspring.git
+cd wellspring
 ```
 
 ### Installation

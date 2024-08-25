@@ -26,7 +26,7 @@ A healthcare Suite, made for
 
 
 
-[![Follow us](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/wellspringmedic)
+[![welldpring X logo](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/wellspringmedic)
 
 [![Email](https://img.shields.io/badge/Email-28a745?style=for-the-badge&logo=gmail&logoColor=white)](mailto:wellspring.medic@gmail.com)
 
@@ -35,6 +35,6 @@ A healthcare Suite, made for
 
 [![Magdielian-code](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/magdielian-code)
 
-[![Life-align: God;](https://img.shields.io/badge/X-28a745?style=for-the-badge&logo=gmail&logoColor=white)](https://x.com/magdiel_amor)
+[![Life-align: God;](https://img.shields.io/badge/X-28a745?style=for-the-badge&logo=x&logoColor=white)](https://x.com/magdiel_amor)
 
 [![game] (https://img.shields.io/badge/)]

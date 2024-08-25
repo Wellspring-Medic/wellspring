@@ -1,4 +1,4 @@
-# TABLE OF CONTENT
+## TABLE OF CONTENT
 - 🤖 Introduction
 - ⚙️ Tech Stack
 - 🔋 Features
@@ -7,7 +7,7 @@
 
 
 
-# 🤖 INTRODUCTION
+## 🤖 INTRODUCTION
 A healthcare Suite, made for 
 
 - Healthcare Organizations, Pharmaceuticals, Health cenres etc.
@@ -17,7 +17,7 @@ A healthcare Suite, made for
 
 
 
-    ## Follow us on all our Social Networks for Features Updates, Community:
+    ### Follow us on all our Social Networks for Features Updates, Community:
 
     - Community
     - Suggest New Features
@@ -27,11 +27,11 @@ A healthcare Suite, made for
 
     [![welldpring X logo](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/wellspringmedic)        [![Email](https://img.shields.io/badge/Wellspring%20Healthcare-28a745?style=for-the-badge&logo=gmail&logoColor=white)](mailto:wellspring.medic@gmail.com)
 
-    ### Follow Our Creator on his socials...
+    #### Follow Our Creator on his socials...
     [![Ozioma Agaecheta](https://img.shields.io/badge/Ozioma%20Agaecheta-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ozioma-agaecheta-4ba85424a/)  [![Magdielian-code](https://img.shields.io/badge/Magdielian--code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/magdielian-code)    [![Life-align: God;](https://img.shields.io/badge/Life--align%3A%20God%3B-28a745?style=for-the-badge&logo=x&logoColor=white)](https://x.com/magdiel_amor)
 
 
-# ⚙️ TECH STACK
+## ⚙️ TECH STACK
 - Next.js
 - Appwrite
 - Typescript
@@ -41,7 +41,7 @@ A healthcare Suite, made for
 
 
 
-# 🔋FEATURES
+## 🔋FEATURES
 👉 Patient Registration: Users can sign up and create a personal profile as a patient.
 
 👉 Appointments and Bookings: Patients can schedule appointments with doctors at their convenience and can book multiple appointments.
@@ -66,11 +66,11 @@ I see the issue. The problem is that you've nested code blocks within a larger c
 
 
 
-# 🤸 QUICK START
+## 🤸 QUICK START
 
 Follow these steps to set up the project locally on your machine.
 
-### Prerequisites
+#### Prerequisites
 
 Make sure you have the following installed on your machine:
 
@@ -78,7 +78,7 @@ Make sure you have the following installed on your machine:
 - Node.js
 - npm (Node Package Manager)
 
-### Cloning the Repository
+#### Cloning the Repository
 
 ```bash - using SSH
 git clone git@github.com:Wellspring-Medic/wellspring.git
@@ -90,7 +90,7 @@ git clone https://github.com/Wellspring-Medic/wellspring.git
 cd wellspring
 ```
 
-### Installation
+#### Installation
 
 Install the project dependencies using npm:
 
@@ -98,7 +98,7 @@ Install the project dependencies using npm:
 npm install
 ```
 
-### Set Up Environment Variables
+#### Set Up Environment Variables
 
 Create a new file named .env.local in the root of your project and add the following content:
 
@@ -117,7 +117,7 @@ NEXT_PUBLIC_ADMIN_PASSKEY=111111
 
 Replace the placeholder values with your actual Appwrite credentials. You can obtain these credentials by signing up on the Appwrite website.
 
-### Running the Project
+#### Running the Project
 
 ```bash
 npm run dev
@@ -126,7 +126,7 @@ npm run dev
 Open http://localhost:3000 in your browser to view the project.
 
 
-# LICENSE 
+## LICENSE 
 
 This project is licensed under the [MIT License](LICENSE).
 

@@ -1,4 +1,4 @@
-# Table of Contents
+# TABLE OF CONTENT
 - 🤖 Introduction
 - ⚙️ Tech Stack
 - 🔋 Features
@@ -8,7 +8,7 @@
 - 🚀 More
 
 
-# Introduction
+# INTRODUCTION
 A healthcare Suite, made for 
 
 - Healthcare Organizations, Pharmaceuticals, Health cenres etc.
@@ -18,7 +18,7 @@ A healthcare Suite, made for
 
 
 
-## Follow us on all our Social Networks for Features Updates, Community:
+    ## Follow us on all our Social Networks for Features Updates, Community:
 
 - Community
 - Suggest New Features

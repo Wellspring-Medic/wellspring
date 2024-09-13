@@ -2,6 +2,7 @@
 
 import { ID, Models, Query } from "node-appwrite";
 import { users } from "../appwrite.config";
+import { parse } from "path";
 
 export const createUser = async (user: CreateUserParams) => {
   try {
@@ -26,3 +27,12 @@ function parseStringify(newuser: Models.User<Models.Preferences>) {
   throw new Error("Function not implemented.");
 }
 
+export const getUser = async (userId: string) => {
+  try {
+    const user = await users.get(userId);
+
+    return parseStringify(user);
+  } catch (error) {
+    console.log(error);
+  }
+}

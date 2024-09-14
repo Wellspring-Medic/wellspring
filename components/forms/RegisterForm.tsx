@@ -14,8 +14,10 @@ import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patient.actions";
 import { FormFieldType } from "./PatientForm";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { GenderOptions } from "@/constants";
+import { Doctors, GenderOptions } from "@/constants";
 import { Label } from "../ui/label";
+import { SelectItem } from "../ui/select";
+import Image from "next/image";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -130,23 +132,69 @@ const RegisterForm = ({ user }: { user: User }) => {
           />
         </div>
 
-        {/* <section className="space-y-6">
-          <div className="mb-9 space-y-1">
-            <h2 className="sub-header">Medical Information.</h2>
-          </div>
-        </section> */}
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="address"
+            label="Address"
+            placeholder="No 3B, Press Avenue. Port Harcourt."
+          />
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="occupation"
+            label="Occupation"
+            placeholder="Software Engineer."
+          />
+        </div>
 
         <div className="flex flex-col gap-6 xl:flex-row">
           <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
-            name="email"
-            label="Email"
-            placeholder="johndoe@gmail.com"
-            iconSrc="/assets/icons/email.svg"
-            iconAlt="email"
+            name="emergencyCOntactName"
+            label="Emergency Contact Name"
+            placeholder="Parent's/Guardian's Name"
+          />
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="emergencyConatcNumber"
+            label="Emergency Contact Number"
+            placeholder="(+234) 123 456 7890"
           />
         </div>
+
+        <section className="space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="sub-header">Medical Information.</h2>
+          </div>
+        </section>
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.SELECT}
+            control={form.control}
+            name="primaryPhysician"
+            label="Primary Physician"
+            placeholder="Select a Physician"
+          >
+            {Doctors.map((doctor) => (
+              <SelectItem key={doctor.name} value={doctor.name}>
+                <div className="flex cursor-pointer items-center gap-2">
+                    <Image 
+                    src={doctor.image}
+                    alt={doctor.name}
+                    width={32}
+                    height={32}
+                    className="rounded-full border border-dark-500"  
+                    />
+                    <p>{doctor.name}</p>
+                </div>
+              </SelectItem>
+            ))}
+          </CustomFormField>
+          </div>
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>

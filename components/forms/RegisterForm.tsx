@@ -18,6 +18,7 @@ import { Doctors, GenderOptions, IdentificationTypes } from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
+import FileUploader from "../FileUploader";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -205,7 +206,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             label="Insurance Provider"
             placeholder=" Blue Shield Insurance"
           />
-           <CustomFormField
+          <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
             name="insurancePolicyNumber"
@@ -221,7 +222,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             label="Allergies (if any)"
             placeholder="Penicillin, Aspirin, Peanuts etc."
           />
-           <CustomFormField
+          <CustomFormField
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
             name="currentMedication"
@@ -237,7 +238,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             label="Family Medical History"
             placeholder="1. Mother - Diabetes, 2. Father - Hypertension"
           />
-           <CustomFormField
+          <CustomFormField
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
             name="pastMedicalHistory"
@@ -262,10 +263,32 @@ const RegisterForm = ({ user }: { user: User }) => {
           >
             {IdentificationTypes.map((type) => (
               <SelectItem key={type} value={type}>
-               {type}
+                {type}
               </SelectItem>
             ))}
           </CustomFormField>
+
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="identificationNumber"
+            label="Identification Number"
+            placeholder="V3N-123-456-789"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.SKELETON}
+            control={form.control}
+            name="identificationDocument"
+            label="Upload a scanned copy of your Identification Document"
+            renderSkeleton={(field) => (
+             <FormControl>
+              <FileUploader files={field.value} onChange={field.onChange}/>
+             </FormControl>
+            )}
+          />
+        
+         
         </div>
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>

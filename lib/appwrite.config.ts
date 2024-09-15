@@ -21,3 +21,5 @@ export const messaging = new sdk.Messaging(client);
 
 
 
+
+export { BUCKET_ID, WELLSPRING_DB_ID, ENDPOINT, PATIENT_COLLECTION_ID, PROJECT_ID };

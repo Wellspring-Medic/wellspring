@@ -26,16 +26,16 @@ import Image from "next/image";
 import FileUploader from "../FileUploader";
 
 const RegisterForm = ({ user }: { user: User }) => {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof PatientFormValidation>>({
     resolver: zodResolver(PatientFormValidation),
     defaultValues: {
       ...PatientFormDefaultValues,
-      name: "",
-      email: "",
-      phone: "",
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
     },
   });
 
@@ -57,21 +57,41 @@ const RegisterForm = ({ user }: { user: User }) => {
     }
 
     try {
-      const patientData = {
-        ...values,
+      const patientData: RegisterUserParams = {
         userId: user.$id,
-        birthDate: new Date(values.birthDate),
+        birthDate: values.birthDate,
+        gender: values.gender as gender,
+        address: values.address,
+        occupation: values.occupation,
+        emergencyContactName: values.emergencyContactName,
+        emergencyContactNumber: values.emergencyContactNumber,
+        primaryPhysician: values.primaryPhysician,
+        insuranceProvider: values.insuranceProvider,
+        insurancePolicyNumber: values.insurancePolicyNumber,
+        allergies: values.allergies || undefined,
+        currentMedication: values.currentMedication || undefined,
+        familyMedicalHistory: values.familyMedicalHistory || undefined,
+        pastMedicalHistory: values.pastMedicalHistory || undefined,
+        identificationType: values.identificationType || undefined,
+        identificationNumber: values.identificationNumber || undefined,
         identificationDocument: formData,
+        privacyConsent: values.privacyConsent,
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
       };
-      // @ts-ignore
+      console.log("About to register patient with data:", patientData);
       const patient = await registerPatient(patientData);
-
-      if (patient) router.push(`/patients/${user.$id}/new-appointment`);
+      console.log("Patient registration result:", patient);
+      if (patient) {
+        console.log("Redirecting to:", `/patients/${user.$id}/new-appointment`);
+        router.push(`/patients/${user.$id}/new-appointment`);
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Error during submission:", error);
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   return (
@@ -331,7 +351,7 @@ const RegisterForm = ({ user }: { user: User }) => {
           />
         </section>
 
-        <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
+        <SubmitButton isLoading={isLoading}>Submit and Continue</SubmitButton>
       </form>
     </Form>
   );

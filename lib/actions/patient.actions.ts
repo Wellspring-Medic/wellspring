@@ -12,7 +12,7 @@ import {
   storage,
   users,
 } from "../appwrite.config";
-// import { parseStringify } from "../utils";
+import { parseStringify } from "../utils";
 
 export const createUser = async (user: CreateUserParams) => {
   try {
@@ -33,9 +33,6 @@ export const createUser = async (user: CreateUserParams) => {
     }
   }
 };
-function parseStringify(newuser: Models.User<Models.Preferences>) {
-  throw new Error("Function not implemented.");
-}
 
 export const getUser = async (userId: string) => {
   try {
@@ -47,20 +44,41 @@ export const getUser = async (userId: string) => {
   }
 };
 
+export const getPatient = async (userId: string) => {
+  try {
+    const patients = await databases.listDocuments(
+      WELLSPRING_DB_ID!,
+      PATIENT_COLLECTION_ID!,
+      [
+        Query.equal('userId', userId)
+      ]
+    );
+
+    return parseStringify(patients.documents[0]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const registerPatient = async ({
   identificationDocument,
   ...patient
 }: RegisterUserParams) => {
   try {
+    // Add file to the storage bucket
     // Upload file ->  // https://appwrite.io/docs/references/cloud/client-web/storage#createFile
+    
     let file;
     if (identificationDocument) {
-      const inputFile = InputFile.fromBuffer(
-        identificationDocument?.get("blobFile") as Blob,
-        identificationDocument?.get("fileName") as string
-      );
+      const blobFile = identificationDocument.get("blobFile") as Blob;
+      const fileName = identificationDocument.get("fileName") as string;
 
-      file = await storage.createFile(BUCKET_ID!, ID.unique(), inputFile);
+      if (blobFile && fileName) {const arrayBuffer = await blobFile.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        
+        const inputFile = InputFile.fromBuffer(buffer, fileName);
+        file = await storage.createFile(BUCKET_ID!, ID.unique(), inputFile);
+      }
     }
 
     // Create new patient document -> https://appwrite.io/docs/references/cloud/server-nodejs/databases#createDocument
@@ -70,15 +88,13 @@ export const registerPatient = async ({
       ID.unique(),
       {
         identificationDocumentId: file?.$id || null,
-        identificationDocumentUrl: file ?
-          `${ENDPOINT}/storage/buckets/${BUCKET_ID}/files/${file?.$id}/view?project=${PROJECT_ID}`: null,
-        
+        identificationDocumentUrl: `${ENDPOINT}/storage/buckets/${BUCKET_ID}/files/${file?.$id}/view?project=${PROJECT_ID}`,
         ...patient,
       }
     );
 
     return parseStringify(newPatient);
   } catch (error) {
-    console.error("An error occurred while creating a new patient:", error);
+    console.log(error);
   }
 };

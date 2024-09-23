@@ -90,8 +90,12 @@ const RegisterForm = ({ user }: { user: User }) => {
     } catch (error) {
       console.error("Error during submission:", error);
     } finally {
+      console.log("isLoading:", isLoading);
       setIsLoading(false);
+      console.log("isLoading:", isLoading);
     }
+
+    console.log("Form is valid:", form.formState.isValid);
   };
 
   return (

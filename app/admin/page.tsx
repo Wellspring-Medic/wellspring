@@ -1,9 +1,14 @@
+import columns from "@/components/table/columns";
+import DataTable from "@/components/table/DataTable";
 import StatCard from "@/components/ui/StatCard";
+import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Admin = () => {
+const Admin = async () => {
+
+    const appointments = await getRecentAppointmentList();
   return (
     <div className="m-auto flex max-w-7xl flex-col space-y-14">
       <header className="admin-header">
@@ -31,23 +36,25 @@ const Admin = () => {
         <section className="admi-stat">
           <StatCard 
           type="appointments"
-          count={5}
+          count={appointments.ScheduledCount}
           label="Scheduled Appointments"
           icon="/assetsicons/appointments.svg"
           />
           <StatCard 
           type="pending"
-          count={5}
-          label="Scheduled Appointments"
-          icon="/assetsicons/appointments.svg"
+          count={appointments.pendingCount}
+          label="Pending Appointments"
+          icon="/assetsicons/pending.svg"
           />
           <StatCard 
-          type="cnacelled"
-          count={5}
-          label="Scheduled Appointments"
-          icon="/assetsicons/appointments.svg"
+          type="cancelled"
+          count={appointments.cancelledCount}
+          label="Cancelled Appointments"
+          icon="/assetsicons/cancelled.svg"
           />
         </section>
+
+        <DataTable  columns={columns} data={appointments.documents} />
       </main>
     </div>
   );
